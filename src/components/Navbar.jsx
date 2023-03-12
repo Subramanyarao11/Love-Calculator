@@ -7,14 +7,13 @@ function Navbar() {
       <div className="mx-4 my-2">
         <div className="relative flex items-center justify-between">
           <div className="flex flex-row items-center justify-center space-x-3">
-            {/* <img src="/logo.png" alt="" width={35} height={35} /> */}
-            <p className="text-xl font-bold hover:text-neutral-500 cursor-pointer">
+            <p className="text-xl font-bold text-pink-600 hover:text-pink-500 cursor-pointer">
               Love Calculator
             </p>
           </div>
 
           <a
-            href="https://github.com/hqasmei/platoio"
+            href="https://github.com/Subramanyarao11/Love-Calculator"
             target="_blank"
             rel="noreferrer"
           >
@@ -38,7 +37,7 @@ function Navbar() {
                     />
                   </svg>
 
-                  <span className="text-gray-100">Star us on Github</span>
+                  <span className="text-gray-100">Star on Github</span>
                 </span>
               </button>
             </div>

@@ -1,7 +1,12 @@
 import React , { useState } from 'react'
 import  axios  from 'axios';
+import { FaHeart } from "react-icons/fa";
 
 export default function Calculator() {
+    const [fname, setfname] = useState("")
+    const [lname, setlname] = useState("")
+    const [data, setdata] = useState({})
+
     const calculate = (e) => {
         e.preventDefault()
         const options = {
@@ -14,22 +19,20 @@ export default function Calculator() {
             }
           };
 
-          axios.request(options).then(function (response) {
-              console.log(response.data);
-          }).catch(function (error) {
+          axios.request(options)
+          .then(data => setdata(data)).catch(function (error) {
               console.error(error);
           });
           setfname("")
           setlname("")
     }
 
-    const [fname, setfname] = useState("")
-    const [lname, setlname] = useState("")
-    const [data, setdata] = useState({})
+
 
   return (
     <>
-    <div className="bg-white flex items-center jusify-center justify-center" style={{ fontFamily: '"Lato", sans-serif' }}>
+    <main className="pt-16 h-screen place-items-center">
+    <div className="flex items-center jusify-center justify-center" style={{ fontFamily: '"Lato", sans-serif' }}>
     <div className="flex md:flex-row flex-col items-center pt-4 px-4">
         <div className="flex flex-col">
             <label htmlFor="fname" className="text-gray-800  text-sm font-bold leading-tight tracking-normal mb-2">
@@ -37,17 +40,23 @@ export default function Calculator() {
             </label>
             <input value={fname} onChange={(e) => setfname(e.target.value)} id="fname"  className="text-gray-600  focus:outline-none focus:border focus:border-indigo-700 font-normal w-64 bg-white  h-10 flex items-center pl-3 text-sm border-gray-300  rounded border shadow" placeholder="Enter your name" />
         </div>
-        <div className="flex flex-col p-4">
+        <div className='flex flex-col px-4'>
+        <div className='w-full flex flex-col items-center justify-center mx-auto mt-5'>
+        <FaHeart className="text-[#E90606] custom-css-pound w-10 h-10" />
+        </div>
+        </div>
+        <div className="flex flex-col">
             <label htmlFor="lname" className="text-gray-800  text-sm font-bold leading-tight tracking-normal mb-2">
-                Your Name
+                    Partner's Name
             </label>
             <input id="lname" value={lname} onChange={(e) => setlname(e.target.value)} className="text-gray-600  focus:outline-none focus:border focus:border-indigo-700 font-normal w-64 bg-white  h-10 flex items-center pl-3 text-sm border-gray-300  rounded border shadow" placeholder="Enter your beloved one's name" />
         </div>
     </div>
 </div>
-<div className='flex justify-center items-center'>
-    <button onClick={(e) => calculate(e)} className="mx-2 my-2 bg-pink-700 transition duration-150 ease-in-out hover:bg-pink-600 rounded text-white px-6 py-2 text-sm">Button</button>
+<div className='flex justify-center items-center pt-4'>
+    <button onClick={(e) => calculate(e)} className="mx-2 my-2 bg-pink-700 transition duration-150 ease-in-out hover:bg-pink-600 rounded text-white px-6 py-2 text-sm">Calculate</button>
     </div>
+    </main>
 </>
   )
 }
