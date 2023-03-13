@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.progress {
+    @apply bg-[#d8d8d8] relative h-[30px] w-[300px] mx-0 my-[15px] rounded-[20px];
+  }
+  .progress-done {
+    @apply shadow-[0_3px_3px_-5px_#F2709C,0_2px_5px_#F2709C] text-white flex items-center justify-center h-full w-0 opacity-0 transition-[1s] duration-[ease] delay-[0.3s] rounded-[20px];
+    background: linear-gradient(to left, #f2709c, #ff9472);
+  }
 
 .custom-css-pound {
     animation: animateHeart 1.2s infinite;
