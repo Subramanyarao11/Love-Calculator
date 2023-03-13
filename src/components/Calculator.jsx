@@ -19,7 +19,7 @@ export default function Calculator() {
             url: 'https://love-calculator.p.rapidapi.com/getPercentage',
             params: { fname: fname, sname: lname },
             headers: {
-                'X-RapidAPI-Key': '35bb3b5787msh4357cfbbce9886cp1831e6jsn4e397a2db309',
+                'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
                 'X-RapidAPI-Host': 'love-calculator.p.rapidapi.com'
             }
         };
