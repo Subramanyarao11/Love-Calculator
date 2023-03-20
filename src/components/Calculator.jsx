@@ -11,8 +11,7 @@ export default function Calculator() {
     const [isPending, setisPending] = useState(false)
     // console.log(data)
 
-    const calculate = (e) => {
-        e.preventDefault()
+    const calculate = () => {
         setisPending(true)
         const options = {
             method: 'GET',
