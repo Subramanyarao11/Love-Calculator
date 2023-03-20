@@ -6,7 +6,7 @@ import Progress from './Progress'
 
 export default function Calculator() {
     const [fname, setfname] = useState("")
-    const [lname, setlname] = useState("")
+    const [sname, setsname] = useState("")
     const [data, setdata] = useState({})
     const [isPending, setisPending] = useState(false)
     // console.log(data)
@@ -16,8 +16,9 @@ export default function Calculator() {
         const options = {
             method: 'GET',
             url: 'https://love-calculator.p.rapidapi.com/getPercentage',
-            params: { fname: fname, sname: lname },
+            params: { fname: fname, sname: sname },
             headers: {
+//                 Use your RapidAPI key over here, I have saved it in my env file and importing it over here
                 'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
                 'X-RapidAPI-Host': 'love-calculator.p.rapidapi.com'
             }
